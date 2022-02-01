@@ -1,14 +1,14 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react'
 
-import Link from "next/link";
+import Link from 'next/link'
 
-import { AppConfig } from "@/utils/AppConfig";
-import { ThemeChanger } from "@/components/DarkModeBtn";
+import { AppConfig } from '@/utils/AppConfig'
+import { ThemeChanger } from '@/components/DarkModeBtn'
 
 type MainProps = {
-  meta: ReactNode;
-  children: ReactNode;
-};
+  meta: ReactNode
+  children: ReactNode
+}
 
 const Main = (props: MainProps) => {
   return (
@@ -58,7 +58,7 @@ const Main = (props: MainProps) => {
         <div className="content mx-8 py-5 text-lg">{props.children}</div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export { Main };
+export { Main }

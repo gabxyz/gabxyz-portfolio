@@ -1,13 +1,13 @@
-import { NextSeo } from "next-seo";
-import Head from "next/head";
+import { NextSeo } from 'next-seo'
+import Head from 'next/head'
 
-import { AppConfig } from "@/utils/AppConfig";
+import { AppConfig } from '@/utils/AppConfig'
 
 type MetaProps = {
-  title: string;
-  description: string;
-  canonical?: string;
-};
+  title: string
+  description: string
+  canonical?: string
+}
 
 const Meta = (props: MetaProps) => {
   return (
@@ -29,11 +29,11 @@ const Meta = (props: MetaProps) => {
           description: props.description,
           url: props.canonical,
           locale: AppConfig.locale,
-          site_name: AppConfig.site_name,
+          site_name: AppConfig.site_name
         }}
       />
     </>
-  );
-};
+  )
+}
 
-export { Meta };
+export { Meta }

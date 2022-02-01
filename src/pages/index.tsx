@@ -1,6 +1,6 @@
-import { Meta } from "@/components/Meta";
-import { Main } from "@/templates/Main";
-import { AppConfig } from "@/utils/AppConfig";
+import { Meta } from '@/components/Meta'
+import { Main } from '@/templates/Main'
+import { AppConfig } from '@/utils/AppConfig'
 
 const Home = () => {
   return (
@@ -14,7 +14,7 @@ const Home = () => {
     >
       <h1>{AppConfig.description}</h1>
     </Main>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
