@@ -1,5 +1,5 @@
-import { Meta } from '@/components/Meta';
-import { Main } from '@/templates/Main';
+import { Meta } from "@/components/Meta";
+import { Main } from "@/templates/Main";
 
 const Portfolio = () => (
   <Main meta={<Meta title="Lorem ipsum" description="Lorem ipsum" />}>

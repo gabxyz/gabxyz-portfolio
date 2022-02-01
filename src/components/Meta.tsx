@@ -1,8 +1,7 @@
-import { NextSeo } from 'next-seo';
-import Head from 'next/head';
-import { useRouter } from 'next/router';
+import { NextSeo } from "next-seo";
+import Head from "next/head";
 
-import { AppConfig } from '@/utils/AppConfig'
+import { AppConfig } from "@/utils/AppConfig";
 
 type MetaProps = {
   title: string;
@@ -11,8 +10,6 @@ type MetaProps = {
 };
 
 const Meta = (props: MetaProps) => {
-  const router = useRouter();
-
   return (
     <>
       <Head>
