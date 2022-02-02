@@ -4,16 +4,16 @@ import { BsSun, BsMoonStars } from 'react-icons/bs'
 
 export const ThemeChanger = () => {
   const [mounted, setMounted] = useState(false)
-  const { setTheme } = useTheme()
+  const { theme, setTheme } = useTheme()
 
   // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), [])
 
-  if (!mounted) return null
-
+  if (!mounted)
+    return (
+      <div className="flex h-8 w-16 animate-pulse items-center justify-between rounded-lg bg-gray-300 p-1.5"></div>
+    )
   const pageTheme = document.documentElement.className
-
-  localStorage.setItem('isChecked', pageTheme === 'light' ? 'false' : 'true')
 
   return (
     <div>
@@ -21,9 +21,8 @@ export const ThemeChanger = () => {
         type="checkbox"
         id="toggle"
         className="hidden"
-        defaultChecked={
-          localStorage.getItem('isChecked') === 'true' ? true : false
-        }
+        checked={theme === 'dark' ? true : false}
+        readOnly
         onClick={() => setTheme(pageTheme === 'light' ? 'dark' : 'light')}
       />
       <label htmlFor="toggle">
