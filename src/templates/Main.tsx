@@ -13,7 +13,7 @@ type MainProps = {
   children: ReactNode
 }
 
-const Main = (props: MainProps) => {
+export const Main = (props: MainProps) => {
   return (
     <div className="w-full px-1 text-gray-700 antialiased">
       {props.meta}
@@ -71,5 +71,3 @@ const Main = (props: MainProps) => {
     </div>
   )
 }
-
-export { Main }
