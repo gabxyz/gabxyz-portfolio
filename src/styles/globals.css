@@ -6,6 +6,12 @@
   @apply translate-x-7;
 }
 
-#toggle:checked ~ label svg.test-class {
-  @apply -translate-x-8;
+.menu {
+  opacity: 0;
+  transition: 0.8s ease-in-out;
+}
+
+.menuVisible {
+  @apply translate-y-2;
+  opacity: 1;
 }

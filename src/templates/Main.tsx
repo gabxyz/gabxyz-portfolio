@@ -4,6 +4,9 @@ import Link from 'next/link'
 
 import { AppConfig } from '@/utils/AppConfig'
 import { ThemeChanger } from '@/components/DarkModeBtn'
+import { BiBriefcase, BiHomeAlt } from 'react-icons/bi'
+import { BsPatchQuestion } from 'react-icons/bs'
+import MobileMenu from '@/components/MobileMenu'
 
 type MainProps = {
   meta: ReactNode
@@ -16,37 +19,45 @@ const Main = (props: MainProps) => {
       {props.meta}
 
       <div className="mx-auto max-w-screen-xl">
-        <div className="border-b border-stone-400">
-          <div className="flex-row items-center justify-between md:flex">
-            <div className="mx-8 mt-4 pt-14 pb-4">
-              <div className="cursor-default text-center text-3xl font-bold text-slate-900 ">
+        <div className="header-border border-b border-stone-400">
+          <div className="flex flex-col justify-between md:flex md:flex-row md:items-center">
+            <div className="mx-4 pt-10 pb-10 md:pt-14 md:pb-4 md:pl-4">
+              <div className="cursor-default text-left text-3xl font-bold text-slate-900 dark:text-gray-700">
                 {AppConfig.title}
               </div>
+              <div className="text-md cursor-default text-left text-gray-700 ">
+                {AppConfig.description}
+              </div>
             </div>
-            <div className="flex flex-col items-end justify-center">
-              <div className="mx-4 mb-4 md:mx-8">
+            <div className="flex flex-row-reverse items-start justify-between md:flex-col md:items-end">
+              <div className="mx-4 mb-4 md:mx-4">
                 <ThemeChanger />
               </div>
-              <ul className="hidden flex-wrap justify-end text-lg md:flex">
-                <li className="mr-8">
+              <MobileMenu />
+              {/* Medium+ menu */}
+              <ul className="hidden md:flex md:flex-row md:items-center md:justify-between md:pt-4">
+                <li className="mr-4 flex h-8 w-24 flex-row items-center justify-center rounded-lg transition duration-500 ease-in-out hover:bg-gray-300">
                   <Link href="/">
-                    <a className="border-none text-zinc-900 hover:text-stone-500">
+                    <a className="flex flex-row border-none text-zinc-900 hover:text-stone-500 dark:text-gray-700">
+                      <BiHomeAlt size={20} className="mr-1" />
                       Home
                     </a>
                   </Link>
                 </li>
 
-                <li className="mr-8">
+                <li className="mr-4 flex h-8 w-28 flex-row items-center justify-center rounded-lg transition duration-500 ease-in-out hover:bg-gray-300">
                   <Link href="/portfolio/">
-                    <a className="border-none text-zinc-900 hover:text-stone-500">
+                    <a className="flex flex-row border-none text-zinc-900 hover:text-stone-500 dark:text-gray-700">
+                      <BiBriefcase size={20} className="mr-1" />
                       Portfolio
                     </a>
                   </Link>
                 </li>
 
-                <li className="mr-8">
+                <li className="mr-4 flex h-8 w-24 flex-row items-center justify-center rounded-lg transition duration-500 ease-in-out hover:bg-gray-300">
                   <Link href="/about/">
-                    <a className="border-none text-zinc-900 hover:text-stone-500">
+                    <a className="flex flex-row border-none text-zinc-900 hover:text-stone-500 dark:text-gray-700">
+                      <BsPatchQuestion size={20} className="mr-1" />
                       About
                     </a>
                   </Link>
